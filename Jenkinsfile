@@ -7,15 +7,9 @@ pipeline {
 	}
 	
 	stages {
-		//stage('Initialise') {
-		//	steps {
-		//		echo "PATH = ${M2_HOME}/bin:${PATH}"
-		//		echo "M2_HOME = /opt/maven"
-		//	}
-		//}
 		stage('Build Java') {
 			steps {
-					sh 'mvn -B -DskipTests clean install'
+					sh 'mvn clean install'
 			}
 		}
 		stage('Build Docker Image') {
